@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Evarínya Landing</title>
   <link rel="stylesheet" href="style.css" />
-  
   <style>
     @font-face {
       font-family: 'SnellRoundhand';
       src: url('fonts/SnellRoundhand.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
       font-display: swap;
     }
     @font-face {
@@ -23,13 +20,11 @@
       font-family: 'Quicksand';
       src: url('fonts/Quicksand-Regular.woff2') format('woff2');
       font-weight: 400;
-      font-style: normal;
     }
     @font-face {
       font-family: 'Quicksand';
       src: url('fonts/Quicksand-Bold.woff2') format('woff2');
       font-weight: 700;
-      font-style: normal;
     }
 
     html, body {
@@ -43,33 +38,11 @@
 
 <body>
   <div id="container" style="position: relative; width: 100vw; height: 100vh;">
-    
-    <!-- 🎥 Multiple Preloaded Video Clips -->
-    <div id="videoContainer">
-      <video id="Idle" class="evClip" src="videos/Idle.mp4" preload="auto" muted loop playsinline></video>
-      <video id="Roar" class="evClip" src="videos/Roar.mp4" preload="auto" muted playsinline></video>
-      <video id="Rage" class="evClip" src="videos/Rage.mp4" preload="auto" muted playsinline></video>
-      <video id="Nuzzle" class="evClip" src="videos/Nuzzle.mp4" preload="auto" muted playsinline></video>
-      <video id="SleepStart" class="evClip" src="videos/Sleep-start.mp4" preload="auto" muted playsinline></video>
-      <video id="SleepLoop" class="evClip" src="videos/Sleep-loop.mp4" preload="auto" muted loop playsinline></video>
-      <video id="SleepWake" class="evClip" src="videos/Sleep-wake.mp4" preload="auto" muted playsinline></video>
-    </div>
 
-    <!-- 🔒 Transition Blur Overlay -->
-    <div id="transitionOverlay" style="
-      position: absolute;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.2);
-      backdrop-filter: blur(10px);
-      z-index: 999;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    "></div>
+    <!-- 🎥 Dynamic Video Clips Container -->
+    <div id="videoContainer"></div>
 
-    <!-- 🔒 Transition Frame -->
+    <!-- 🔒 Freeze Canvas -->
     <canvas id="videoFreezeFrame" style="
       position: absolute;
       top: 0; left: 0;
@@ -88,14 +61,26 @@
       cursor: pointer;
       z-index: 600;
     "></div>
+
+    <!-- 🍗 Feeding Button -->
+    <img id="feedingButton" src="feeding-button.png" alt="Feed Evarínya" style="
+      position: absolute;
+      bottom: 80px;
+      left: 80px;
+      width: 70px;
+      height: 50px;
+      z-index: 1002;
+      cursor: pointer;
+    "/>
   </div>
 
   <!-- ⏳ Loading Screen -->
   <div id="loadingScreen" style="
     position: fixed;
     top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: black url('videos/Idle.jpg') center center no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background: black url('videos/day-videos/Idle.jpg') center center no-repeat;
     background-size: cover;
     z-index: 1000;
     opacity: 1;
