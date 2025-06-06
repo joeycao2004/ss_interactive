@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evarínya Landing</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @font-face {
+      font-family: 'SnellRoundhand';
+      src: url('fonts/SnellRoundhand.woff2') format('woff2');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Avenir';
+      src: local('Avenir'), local('Avenir Next');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Quicksand';
+      src: url('fonts/Quicksand-Regular.woff2') format('woff2');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Quicksand';
+      src: url('fonts/Quicksand-Bold.woff2') format('woff2');
+      font-weight: 700;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container" style="position: relative; width: 100vw; height: 100vh;">
+
+    <!-- 🎥 Dynamic Video Clips Container -->
+    <div id="videoContainer"></div>
+
+    <!-- 🔒 Freeze Canvas -->
+    <canvas id="videoFreezeFrame" style="
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 500;
+      display: none;
+    "></canvas>
+
+    <!-- 🎯 Clickbox -->
+    <div id="clickbox" style="
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      cursor: pointer;
+      z-index: 600;
+    "></div>
+
+    <!-- 🍗 Feeding Button -->
+    <img id="feedingButton" src="feeding-button.png" alt="Feed Evarínya" style="
+      position: absolute;
+      bottom: 80px;
+      left: 80px;
+      width: 70px;
+      height: 50px;
+      z-index: 1002;
+      cursor: pointer;
+    "/>
+  </div>
+
+  <!-- ⏳ Loading Screen -->
+  <div id="loadingScreen" style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black url('videos/day-videos/Idle.jpg') center center no-repeat;
+    background-size: cover;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  "></div>
+
+  <!-- 💬 Loading Message -->
+  <div id="loadingMessage" style="
+    position: fixed;
+    top: 55%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.85);
+    color: black;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  ">
+    Evarínya needs time to get to know you! Please bear with her and give her a second :)
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
