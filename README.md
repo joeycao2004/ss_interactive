@@ -1,4 +1,4 @@
-This interactive HTML desktop animation was created by **joeycao2004** with the assistance of Large Language Models (LLMs).
+This interactive HTML desktop animation was created by **Joey C.** with the assistance of Large Language Models (LLMs).
 
 All visual assets (including dragon models, landscapes, skyboxes, and UI icons) are recorded from the game **Day of Dragons**, developed by **Beawesome Games**.  
 The videos were captured using **NVIDIA GeForce Experience** directly from a released copy of Day of Dragons.
